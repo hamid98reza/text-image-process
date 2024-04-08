@@ -1,7 +1,7 @@
 import re
 from collections import OrderedDict
 import nltk
-# nltk.download('words')
+# nltk.download('words')   ## uncommnt this for the first time
 
 class Workers:
 
@@ -46,3 +46,24 @@ class Workers:
             no_char.append(' '.join(multichar_lst))
 
         return no_char
+    
+    def remove_sign_num_fa(self, fa_txt_lst):
+
+        nosign_lst_fa = []
+        for i in fa_txt_lst:
+            sign_removed = "".join(re.findall(r"[\u0600-\u06FF\s]+", i))
+            nosign_lst_fa.append(sign_removed)
+
+        return nosign_lst_fa
+    
+    def remove_dupl_fa(self, fa_txt_lst):
+        
+        fa_lst = []
+        for eachstr in fa_txt_lst:
+            unique_words = list(OrderedDict.fromkeys(eachstr.split()))
+            fa_lst.append(' '.join(unique_words))
+
+        return fa_lst
+    
+
+            
