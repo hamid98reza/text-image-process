@@ -7,6 +7,9 @@ tsk = Tasks()
 #                     rm_dupl_words=True,
 #                     meanless_words=False,
 #                     rm_single_char=True)
-tsk.process_farsi(rm_sign_num=True,
-                  rm_dupl = True,
-                  no_multispace=True)
+
+# tsk.process_farsi(rm_sign_num=True,
+#                   rm_dupl = True,
+#                   no_multispace=True)
+
+tsk.denoise_image()

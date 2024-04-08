@@ -10,4 +10,9 @@ just a sample and developer use :)
 PLEASE UNCOMMENT nltk.download() line in ./src/workers.py for the first time of 
 execution. it would let the 'words' to get downloaded. :)
 
-HAPPY CODING :)
+you can change the threshold of IMAGE DENOISING in .env file to get your desired reulst.
+it is not perfect as it must be.
+cnn denoising will be added the future for the proper result.
+
+best regards!
+HAPPY CODING! :)

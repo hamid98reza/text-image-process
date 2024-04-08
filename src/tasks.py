@@ -1,6 +1,4 @@
 import os
-import pandas as pd
-import numpy as np
 import datetime
 import cv2 as cv
 import settings
@@ -82,4 +80,20 @@ class Tasks:
 
 
     def denoise_image(self):
-        pass
+        
+        img_list = os.listdir(settings.IMAGEDIR)
+        for image in img_list:
+            path_ = os.path.join(settings.IMAGEDIR,image)
+            frame = cv.imread(path_)
+            rsz_frame = cv.resize(frame,(640,480))   # you can change dimension it as you desire
+            dst = cv.fastNlMeansDenoisingColored(frame,
+                                                 None,
+                                                 int(settings.THRESH2),
+                                                 int(settings.THRESH3),
+                                                 int(settings.THRESH4),
+                                                 int(settings.THRESH5))
+            
+            name = f"{datetime.datetime.now()}.jpg"
+            cv.imwrite(os.path.join(settings.IMAGE_OUT_DIR, name) ,dst)
+        print("Done")    
+        print("your result is the last image file at  "+ settings.IMAGE_OUT_DIR)

@@ -1,7 +1,8 @@
 import re
 from collections import OrderedDict
 import nltk
-# nltk.download('words')   ## uncommnt this for the first time
+# nltk.download('words')   ## uncommnt this for the first time of execution
+                                # for english text processing.
 
 class Workers:
 
